@@ -1,0 +1,180 @@
+
+
+<div class="container-fluid">
+	<div class="col-md-12">
+	
+	<div class="row">
+		<div ng-hide="editorEnabled">
+			<div class="panel panel-info">
+				<div class="panel panel-heading">
+					<h4 class="text-center">{{user.username}}</h4>
+				</div>
+
+				<div class="panel-body">
+					<div class="col-md-4">
+						<img class="img-rounded" style="width: 250px"
+							ng-src="imgs/users/{{user.imgUrl}}" />
+					</div> 
+					<div class="col-md-8">
+
+						<div class="row">
+							<h3>
+								<b>User Details</b>
+							</h3>
+						</div>
+						<hr>
+
+						<div class="row">
+							<div class="col-md-4">
+								<h4>
+									<b>FirstName</b>
+								</h4>
+							</div>
+							<div class="col-md-8">
+								<h4>{{user.fistName}}</h4>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+
+								<h4>
+									<b>LastName</b>
+								</h4>
+							</div>
+							<div class="col-md-8">
+								<h4>{{user.lastName}}</h4>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<h4>
+									<b>Email</b>
+								</h4>
+							</div>
+							<div class="col-md-8">
+								<h4>{{user.email}}</h4>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="col-md-4">
+								<h4>
+									<b>User role</b>
+								</h4>
+							</div>
+							<div class="col-md-8">
+								<h4>{{user.role}}</h4>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<button class="btn btn-default" ng-click="edit()">Edit Profile</button>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+		<div ng-show="editorEnabled">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h4>{{user.username}}</h4>
+				</div>
+
+				<div class="panel-body">
+					<div class="col-md-4">
+						<img class="img-rounded" style="width: 250px"
+							ng-src="imgs/users/{{user.imgUrl}}" />
+							<input class="btn btn-info" type="button" value="changePicture" ng-file-select="onFileSelect($files)" multiple accept="image/*">
+					</div> 
+					<div class="col-md-8">
+
+						<div class="row">
+							<h3>
+								<b>User Details</b>
+							</h3>
+						</div>
+						<hr>
+
+						<div class="row">
+							<div class="col-md-4">
+								<h4>
+									<b>FirstName</b>
+								</h4>
+							</div>
+							<div class="col-md-8">
+								<input ng-model="editFistName" ng-show="editorEnabled"></input>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+
+								<h4>
+									<b>LastName</b>
+								</h4>
+							</div>
+							<div class="col-md-8">
+								<input ng-model="editLastName" ng-show="editorEnabled"></input>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<h4>
+									<b>Email</b>
+								</h4>
+							</div>
+							<div class="col-md-8">
+								<input ng-model="editEmail" ng-show="editorEnabled"></input>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="col-md-4">
+								<h4>
+									<b>User role</b>
+								</h4>
+							</div>
+							<div class="col-md-8">
+								<h4>{{user.role}}</h4>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<button class="btn btn-default" ng-click="cancle()">Cancle</button>
+							</div>
+							<div class="col-md-4" ng-if="!canEdit">
+								<button class="btn btn-success" ng-click="save()">Save Changes</button>
+							</div>
+						</div>
+						
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+		
+		<div class="row" ng-if="user.role === 'ROLE_SELLERS'">
+			<div class="panel panel-primary">
+				<div class="panel panel-heading">
+					<h3 align="center">My stalls:</h3>
+				</div>
+				<div class="panel panel-body">
+					<stall-display ng-repeat="stall in stalls" entity="stall"></stall-display>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row" ng-if="user.role === 'ROLE_ADMIN'">
+			<div class="panel panel-primary">
+				<div class="panel panel-heading">
+					<h3 align="center">All stalls:</h3>
+				</div>
+				<div class="panel panel-body">
+					<stall-display ng-repeat="stall in allStalls" entity="stall"></stall-display>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

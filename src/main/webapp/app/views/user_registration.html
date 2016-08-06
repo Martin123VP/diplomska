@@ -1,0 +1,81 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<div class="panel panel-default">
+				<div class="panel-heading info">
+					<strong> Create account to continue</strong>
+				</div>
+				<div class="panel-body">
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label for="fistName" class="col-md-3 control-label">First Name</label>
+
+							<div class="col-md-9">
+								<input id="fistName" ng-model="fistName" type="text"
+									class="form-control" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="lastName" class="col-md-3 control-label">
+								Last Name</label>
+
+							<div class="col-md-9">
+								<input id="lastName" ng-model="lastName" type="text"
+									class="form-control" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="email" class="col-md-3 control-label">
+								Email</label>
+
+							<div class="col-md-9">
+								<input id="email" ng-model="email" type="email"
+									class="form-control" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="username" class="col-md-3 control-label">
+								User Name</label>
+
+							<div class="col-md-9">
+								<input  ng-model="username" type="text"
+									class="form-control" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" class="col-md-3 control-label">
+								Password</label>
+
+							<div class="col-md-9">
+								<input ng-model="password" type="password"
+									class="form-control" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="image" class="col-md-3 control-label">
+								Upload Image</label>
+
+							<div class="col-md-3 col-md-offser-3">
+								<input class="btn btn-info" type="file"  value="upload" ng-file-select="onFileSelect($files)" multiple accept="image/*">
+							</div>
+							
+			
+						</div>
+						<div class="form-group">
+							<div class="col-md-3 col-md-offset-3">
+								<input type="submit" value="Create Account"
+									class="btn btn-primary" ng-click="createAccount()" />
+							</div>
+							<div class="col-md-2 col-md-offset-1 ">
+								<input class="btn btn-info" type="reset"  value="Reset" >
+							</div>
+							<div class="col-md-3">
+								<a href="#/login" class="btn btn-danger">Cancle</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

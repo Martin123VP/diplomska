@@ -1,0 +1,25 @@
+<div class="col-md-12">
+			<button class="btn btn-success" ng-click="showEdit(e)">Add new seller
+			</button>
+			<table ng-table="tableParams" show-filter="true"
+			class="table table-bordered table-striped">
+
+			<tr ng-repeat="e in $data">
+				<td data-title="'Name'" sortable="'name'"
+					filter="{ 'name': 'text' }">{{ e['user']['fistName'] }}</td>
+				<td data-title="'LastName'" sortable="'lastName'"
+					filter="{ 'lastName': 'text' }">{{ e['user']['lastName'] }}</td>
+				<td data-title="'Edit'" >
+					<button ng-click="showEdit(e)" class="btn btn-primary btn-xs">
+						<i class="glyphicon glyphicon-edit">Edit</i>
+					</button>
+				</td>
+				<td data-title="'Remove'" >
+					<button ng-click="remove(e.id)" class="btn btn-danger btn-xs">
+						<i class="glyphicon glyphicon-remove">Remove</i>
+					</button>
+				</td>
+			</tr>
+				
+		</table>
+</div>

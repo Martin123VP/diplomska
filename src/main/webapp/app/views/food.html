@@ -1,0 +1,100 @@
+<div class="container-fluid" >
+	<div class="col-md-12">
+
+		<div class="row">
+			<div class="panel panel-primary">
+				<div class="panel panel-heading">
+					<h5 class="text-center"></h5>
+				</div>
+				<div class="panel panel-body">
+					<div class="col-md-12">
+							<div class="col-md-1">
+								<h5>
+									<b>Food name</b>
+								</h5>
+							</div>
+							<div class="col-md-3">
+								<h5>{{foodCompound[0].food.name}}</h5>
+							</div>
+							<div class="col-md-1">
+								<h5>
+									<b>Food group</b>
+								</h5>
+							</div>
+							<div class="col-md-3">
+								<h5><a href="#/by_food_group/{{foodCompound[0].food.group}}">{{foodCompound[0].food.group}}</a></h5>
+							</div>
+							<div class="col-md-1">
+								<h5>
+									<b>Food subgroup</b>
+								</h5>
+							</div>
+							<div class="col-md-3">
+								
+									<h5><a href="#/by_food_subgroup/{{foodCompound[0].food.subgroup}}">{{foodCompound[0].food.subgroup}}</a></h5>
+		
+							</div>
+						<div class="row">
+							<div class="col-md-4">
+								<h5><b>Description</b></h5>
+							</div>
+							<div class="col-md-8" ng-if="foodCompound[0].food.description">
+								<h5>{{foodCompound[0].food.description}}</h5>
+							</div>
+							<div class="col-md-8" ng-if="!foodCompound[0].food.description">
+								<h5>There is no description</h5>
+							</div>
+						</div>
+						<div class="row">
+							<h3>Food contained in recipes :</h3>
+							<div ng-repeat="recipeName in recipesByFoodName">
+								<div class="col-md-3">
+									<div class="card">
+									  <img src="{{recipeName.thumbnail}}" width="200" height="150">
+									  <div class="card-block">
+									    <h4 class="card-title"><a href="#/foodRecipe/{{recipeName.name}}">{{recipeName.name}}</a></h4>
+									  </div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<hr>
+						</div>
+						<div class="panel panel-info">
+							<div class="panel panel-heading">
+								<h4 class="text-center"><b>Compounds for {{foodCompound[0].food.name}}</b></h4>
+							</div>
+							<div class="panel panel-body">
+								<div class="col-md-12" id="bubble">
+								</div>
+							</div>
+						</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+circle {
+  fill: rgb(31, 119, 180);
+  fill-opacity: .25;
+  stroke: rgb(31, 119, 180);
+  stroke-width: 1px;
+}
+
+.leaf circle {
+  fill: #ff7f0e;
+  fill-opacity: 1;
+}
+
+.leaf circle:hover{
+	fill: red;
+}
+
+text {
+  font: 10px sans-serif;
+}
+</style>

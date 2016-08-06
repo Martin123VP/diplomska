@@ -1,0 +1,161 @@
+<style>
+body {
+	font-family: "Lato", sans-serif;
+}
+
+.accordion .panel-group {
+	border: none;
+	width: 100%;
+	background-color: #111;
+}
+
+.accordion .panel-default {
+	border: none;
+}
+
+.accordion .panel-heading {
+	border: none;
+	padding-top: 30px;
+	background-color: #111;
+}
+
+.sidenav {
+	height: 100%;
+	position: fixed;
+	width: 16%;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 0px;
+}
+
+.sidenav a {
+	padding: 30px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #818181;
+	display: block;
+	transition: 0.3s
+	border-bottom: 1px solid;
+}
+.sidenav #a:hover {
+	color: black;
+}
+.sidenav #a {
+	margin-top: -10px;
+	padding-left: 17px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #818181;
+	display: block;
+	transition: 0.3s
+	border-bottom: 1px solid;
+}
+
+.sidenav #food {
+	cursor: pointer;
+	position: relative;
+	padding-top: 0px;
+	padding-left: 0px;
+	margin-top: -30px;
+	margin-left: -16px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #818181;
+	display: block;
+	transition: 0.3s
+}
+
+.sidenav .nav {
+	padding-top: 75px;
+}
+
+.sidenav a:hover, #food:hover, a:focus, #food:focus{
+	color: #cccccc;
+}
+.sidenav #foodRecepies:hover, #foodRecepies:focus{
+	color: #cccccc;
+} 
+
+@media screen and (max-height: 450px) {
+	.sidenav {
+		padding-top: 0px;
+	}
+	.sidenav a {
+		font-size: 18px;
+	}
+}
+
+.glyphicon {
+	cursor: pointer;
+	position: relative;
+	margin-top: -30px;
+	margin-left: 76px;
+}
+
+.sidenav #foodRecepies {
+	cursor: pointer;
+	position: relative;
+	padding-top: 0px;
+	padding-left: 0px;
+	margin-top: -60px;
+	margin-left: -16px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #818181;
+	display: block;
+	transition: 0.3s
+}
+
+#glyphicon {
+	cursor: pointer;
+	position: relative;
+	margin-top: -40px;
+	margin-left: 76px;
+}
+
+</style>
+
+<div id="mySidenav" class="sidenav">
+	<a class="nav" href="#">Home</a>
+	<accordion class="accordion" close-others="true"> 
+		<accordion-group is-open="status[$index].open"> 
+			<accordion-heading ng-class="{padding: 0 }" ng-click="status[$index].open=!status[$index].open">
+				<div>
+					<a id="food" class="col-md-9"
+						ng-click="navBrowseFoods(); $event.stopPropagation();"> Foods 
+					</a> 
+					<i
+						class="glyphicon col-md-3"
+						ng-class="{'glyphicon-collapse-up': status[$index].open, 'glyphicon-collapse-down': !status[$index].open}">
+					</i>
+				</div>
+			</accordion-heading> 
+				<a id="a" href="#/allNutrients">Nutrients</a> 
+				<a id="a" href="#/allCompounds">Compounds</a> 
+		</accordion-group>
+	</accordion>
+	<accordion class="accordion" close-others="true"> 
+		<accordion-group is-open="status[$index].open"> 
+			<accordion-heading ng-class="{padding: 0 }" ng-click="status[$index].open=!status[$index].open">
+				<div>
+					<a id="foodRecepies" class="col-md-9"
+						ng-click="navBrowseAllFoodsResepies(); $event.stopPropagation();"> Foods recepies
+					</a> 
+					<i
+						id="glyphicon" class="glyphicon col-md-3"
+						ng-class="{'glyphicon-collapse-up': status[$index].open, 'glyphicon-collapse-down': !status[$index].open}">
+					</i>
+				</div>
+			</accordion-heading> 
+				<a id="a" href="#/allMeatRecipes">Meat Recipes</a> 
+				<a id="a" href="#/allDessertRecipes">Dessert Recipes</a> 
+				<a id="a" href="#/allPastaRecipes">Pasta Recipes</a>
+				<a id="a" href="#/allSaladRecipes">Salad Recipes</a>
+		</accordion-group>
+	</accordion>
+	
+</div>

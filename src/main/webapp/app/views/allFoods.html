@@ -1,0 +1,41 @@
+<table ng-table="tableParams" show-filter="true"
+			class="table">
+
+			<tr ng-repeat="e in $data">
+				<td  data-title="'Food name'" sortable="'name'"
+					filter="{ 'name': 'text' }"><a ng-href="#/by_food_name/{{e.name}}">{{ e.name }}</a></td>
+				<td data-title="' Group '" sortable="'group'"
+					filter="{ 'group': 'text' }"><a ng-href="#/by_food_group/{{e.group}}">{{ e.group }}</a></td>
+				<td data-title="'Subgroup'" sortable="'subgroup'"
+					filter="{ 'subgroup': 'text' }"><a ng-href="#/by_food_subgroup/{{e.subgroup}}">{{ e.subgroup }}</a></td>
+				<td data-title="'Scientific Name'" sortable="'scientific'"
+					filter="{ 'scientific': 'text' }">{{ e.scientific }}</td>
+				
+
+					
+					<style>
+						.trim-info {
+      max-width: 150px;
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;  
+      line-height: 15px;
+      position: relative;
+   }
+					</style>
+					
+	<!-- 			<td data-title="'Edit'">
+					<button ng-click="showEdit(e)" class="btn btn-primary btn-xs">
+						<i class="glyphicon glyphicon-edit"></i> Edit
+					</button>
+				</td>
+				
+				<td data-title="'Remove'">
+					<button ng-click="remove(e.id)" class="btn btn-danger btn-xs">
+						<i class="glyphicon glyphicon-remove"></i> Remove
+					</button>
+				</td> -->
+				
+			</tr>
+		</table>

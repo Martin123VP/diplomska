@@ -1,0 +1,47 @@
+<style>
+	.card {
+		background-color: white;
+		margin-bottom: 10px;
+		border-radius: 10px;
+	    border: 1px solid #73AD21;
+	    padding: 10px;   
+	}
+	
+	.card-text {
+		padding-left: 10px;
+		padding-right: 10px;
+		background-color: #DBD3D1;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	
+	#container {
+		background-image: url("images/images.jpg");
+		margin-left: -23px;
+	    margin-right: -14px;
+	    margin-top: -19px;
+	    padding-top: 21px;
+	}
+	
+</style>
+<div class="container-fluid" id="container">
+
+	<div class="col-md-12">
+		<div ng-repeat="foodRecipe in allFoodsRecipes | limitTo: totalData">
+			
+			 <div class="col-md-4">
+				<div class="card">
+				  <img src="{{foodRecipe.thumbnail}}" width="100%" height="200">
+				  <div class="card-block">
+				    <h4 class="card-title">{{foodRecipe.name}}</h4>
+				    <a href="#/foodRecipe/{{foodRecipe.name}}" class="btn btn-primary">Show more info</a>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="col-md-offset-5">
+		<button class="btn btn-success" ng-click="loadMore()">Load more</button>
+	</div>
+</div>
