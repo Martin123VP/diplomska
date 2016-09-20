@@ -1,0 +1,44 @@
+<style>
+	.header {
+ 	    background: linear-gradient(to right,  #993366, #d279a6);
+	    height: 80px;
+	    margin-left: 14px;
+	    margin-top: 10px;
+	    padding-top: 25px;
+	    padding-left: 12px;
+	    position: relative;
+	    width: 300px;
+	}
+	.header:before {
+	  	border-right: 50px solid white;
+	    border-top: 44px solid transparent;
+	    border-bottom: 44px solid transparent;
+	    content: "";
+	    height: 0;
+	    left: 250px;
+	    position: absolute;
+	    top: -6px;
+	    width: 0;
+	}
+	
+</style>
+<div>
+	<div class="card">
+		 <h3 class="header">{{foodRecipe.name}}</h3>
+		  <div class="col-md-3"><img src="{{foodRecipe.thumbnail}}" width="250px" height="200px"></div>
+		    <div class="col-md-8">
+		    	<span><p class="card-text">{{foodRecipe.comment}}</p></span>
+		    	<hr>
+		    	<div ng-if="foodRecipe.servingTemperature"><span>Serving temperature: {{foodRecipe.servingTemperature}}</span>
+		    	<hr>
+		    	</div>
+		    	<span ng-if="foodRecipe.ingredientName">
+		    	   Ingredients: 
+		    		<div ng-repeat="ingredientName in ingredinetsName track by $index">
+		    			<a href="#/by_food_name/{{searchIngredient[$index]}}"><span>{{ingredientName}}</span></a>
+		    		</div>
+		    	</span>
+		    </div>
+		  </div>
+	</div>
+</div>

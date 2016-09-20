@@ -1,6 +1,6 @@
 FirstApp.factory('CompoundHealthEffectService',['$resource', 'settings', function($resource, settings){
 	
-	return $resource('data/rest/compounds_healt_effects', {}, {
+	return $resource('data/rest/compounds_health_effects', {}, {
 		findByCompoundName: {
 		      method: 'GET',
 		      url: "/data/rest/compounds_health_effects/by_compound_name/:name",

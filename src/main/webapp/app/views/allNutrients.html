@@ -3,7 +3,7 @@
 
 			<tr ng-repeat="e in $data">
 				<td  data-title="'Nutrient name'" sortable="'name'"
-					filter="{ 'name': 'text' }"><a ng-href="#/by_health_effect_name/{{e.name}}">{{ e.name }}</a></td>
+					filter="{ 'name': 'text' }">{{ e.name }}</td>
 				<td data-title="' Chebi name '" sortable="'chebi_name'"
 					filter="{ 'group': 'text' }">{{ e.chebi_name }}</td>
 					<style>

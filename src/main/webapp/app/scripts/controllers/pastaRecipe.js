@@ -1,6 +1,6 @@
 FirstApp
 		.controller(
-				'foodRecipeController',
+				'pastaRecipeController',
 				[
 						'$scope',
 						'crudService',
@@ -11,14 +11,14 @@ FirstApp
 						'$filter',
 						'$modal',
 						'$http',
-						'AllRecipesService',
+						'PastaRecipesService',
 						function($scope, crudService, $routeParams, toaster,
-								settings, ngTableParams, $filter, $modal, $http, AllRecipesService) {
+								settings, ngTableParams, $filter, $modal, $http, PastaRecipesService) {
 							
 							
 					var name = $routeParams.name;
 					
-					$scope.foodRecipe = AllRecipesService.findByName({
+					$scope.foodRecipe = PastaRecipesService.findByName({
 						name: name
 					}, function(data){
 						if(data){

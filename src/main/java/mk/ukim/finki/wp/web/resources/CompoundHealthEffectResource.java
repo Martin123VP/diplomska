@@ -30,7 +30,7 @@ public class CompoundHealthEffectResource extends CrudResource<CompoundHealthEff
 		return getService().findByCompoundName(name);
 	}
 	
-	@RequestMapping(value = "/by_healt_effect_name/{name}", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/by_health_effect_name/{name}", method = RequestMethod.GET, produces = "application/json")
 	public List<CompoundHealthEffect> getByHealthEffectName(@PathVariable String name) {
 		return getService().findByHealthEffectName(name);		
 	}

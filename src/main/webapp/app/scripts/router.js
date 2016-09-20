@@ -40,6 +40,31 @@ FirstApp.config([ '$routeProvider', function($routeProvider) {
 		controller: 'foodRecipeController'
 	});
 	
+	$routeProvider.when('/pastaRecipe/:name', {
+		templateUrl: 'views/foodRecipe.html',
+		controller: 'pastaRecipeController'
+	});
+	
+	$routeProvider.when('/saladRecipe/:name', {
+		templateUrl: 'views/saladRecipe.html',
+		controller: 'saladRecipeController'
+	});
+	
+	$routeProvider.when('/meatRecipe/:name', {
+		templateUrl: 'views/meatRecipe.html',
+		controller: 'meatRecipeController'
+	});
+	
+	$routeProvider.when('/pastaRecipe/:name', {
+		templateUrl: 'views/pastaRecipe.html',
+		controller: 'pastaRecipeController'
+	});
+	
+	$routeProvider.when('/dessertRecipe/:name', {
+		templateUrl: 'views/dessertRecipe.html',
+		controller: 'dessertRecipeController'
+	});
+	
 	$routeProvider.when('/allMeatRecipes', {
 		templateUrl: 'views/allMeatRecipes.html',
 		controller: 'allMeatRecipesController'
@@ -78,6 +103,11 @@ FirstApp.config([ '$routeProvider', function($routeProvider) {
 	$routeProvider.when('/by_compound_name/:name', {
 		templateUrl: 'views/compound.html',
 		controller: 'CompoundController'
+	});
+	
+	$routeProvider.when('/by_health_effect_name/:name', {
+		templateUrl: 'views/nutrient.html',
+		controller: 'NutrientController'
 	});
 	
 	//POST

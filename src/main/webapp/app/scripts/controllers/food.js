@@ -13,10 +13,6 @@ FirstApp.controller(
 		  		window.scope = $scope;
 		  		
 		  		
-		  		/*$scope.food = FoodService.findByName({
-		  			name: $routeParams.name
-		  		});*/
-		  		
 		  		AllRecipesService.findRecipesByIngredientName({
 		  			name : $routeParams.name
 		  		}, function(data){

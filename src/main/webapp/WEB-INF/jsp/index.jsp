@@ -166,6 +166,10 @@
 <script src="scripts/controllers/compound.js"></script>
 <script src="scripts/controllers/foodRecipe.js"></script>
 <script src="scripts/controllers/insertIntoDB.js"></script>
+<script src="scripts/controllers/pastaRecipe.js"></script>
+<script src="scripts/controllers/saladRecipe.js"></script>
+<script src="scripts/controllers/meatRecipe.js"></script>
+<script src="scripts/controllers/dessertRecipe.js"></script>
 
 
 <script src="scripts/controllers/edit_categories.js"></script>
@@ -194,6 +198,10 @@
 <script src="scripts/services/compound.js"></script>
 <script src="scripts/services/compoundHealthEffect.js"></script>
 <script src="scripts/services/AllRecipes.js"></script>
+<script src="scripts/services/MeatRecipes.js"></script>
+<script src="scripts/services/DessertRecipes.js"></script>
+<script src="scripts/services/SaladRecipes.js"></script>
+<script src="scripts/services/PastaRecipes.js"></script>
 
 
 <script src="scripts/directives/combo.js"></script>
