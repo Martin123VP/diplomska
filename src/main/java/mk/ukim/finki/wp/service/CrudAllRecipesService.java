@@ -9,4 +9,6 @@ public interface CrudAllRecipesService extends BaseEntityCrudService<AllRecipes>
 	AllRecipes findByName(String name);
 	
 	public List<AllRecipes> findRecipeByIngredientName(String name);
+	
+	public List<AllRecipes> findTop10ByNameWhereLike(String name);
 }

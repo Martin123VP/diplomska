@@ -9,6 +9,7 @@ import javax.persistence.Table;
 public class DessertRecipes extends BaseEntity {
 	private String resource;
 	private String name;
+	@Column(name = "abstract")
 	private String comment;
 	private String servingTemperature;
 	private String ingredientName;

@@ -7,4 +7,6 @@ import mk.ukim.finki.wp.model.Compound;
 
 public interface CrudCompoundService extends BaseEntityCrudService<Compound> {
 	List<Compound> findByName(String name);
+	
+	List<Compound> findTop10ByNameWhereLike(String name);
 }

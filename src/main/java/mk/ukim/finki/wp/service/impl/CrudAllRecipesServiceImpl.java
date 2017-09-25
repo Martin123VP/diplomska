@@ -32,4 +32,10 @@ BaseEntityCrudServiceImpl<AllRecipes, AllRecipesRepository> implements
 	public List<AllRecipes> findRecipeByIngredientName(String name) {
 		return repository.findRecipesByIngredientName(name);
 	}
+
+	@Override
+	public List<AllRecipes> findTop10ByNameWhereLike(String name) {
+		// TODO Auto-generated method stub
+		return repository.findTop10ByNameWhereLike(name);
+	}
 }

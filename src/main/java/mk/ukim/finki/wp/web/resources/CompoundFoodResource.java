@@ -28,5 +28,10 @@ public class CompoundFoodResource extends CrudResource<CompoundFood, CrudCompoun
 	public List<CompoundFood> getByFoodName(@PathVariable String name) {
 		return getService().findByFoodName(name);
 	}
+	
+	@RequestMapping(value = "/by_compound_name/{name}", method = RequestMethod.GET, produces = "application/json")
+	public List<CompoundFood> getFoodByCompoundName(@PathVariable String name) {
+		return getService().findDistinctByCompoundName(name);
+	}
 
 }

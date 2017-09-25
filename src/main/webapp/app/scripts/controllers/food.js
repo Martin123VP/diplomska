@@ -9,19 +9,29 @@ FirstApp.controller(
 		  	'AllRecipesService',
 		  	function($scope, $routeParams, FoodService, FoodCompoundService, $location, AllRecipesService) {
 		  		
+		  		window.scrollTo(0,0);
 		  		
-		  		window.scope = $scope;
-		  		
-		  		
+		  		$scope.name = $routeParams.name;
+		  		if($routeParams.name == 'Tuna'){
+		  			$scope.name = "Albacore tuna"
+		  		}
+		  		if($routeParams.name == 'Soy'){
+		  			$scope.name = "Soy bean";
+		  		}
+		  		if($routeParams.name == 'onion'){
+		  			$scope.name = "Garden onion";
+		  		}
+		  		if($routeParams.name == 'bread' || $routeParams.name == 'Bread'){
+		  			$scope.name = "Cornbread";
+		  		}
 		  		AllRecipesService.findRecipesByIngredientName({
 		  			name : $routeParams.name
 		  		}, function(data){
-		  			debugger;
 		  			$scope.recipesByFoodName = data;
 		  		});
 		  		
 		  		FoodCompoundService.findByFoodName({
-		  			name: $routeParams.name
+		  			name: $scope.name
 		  		},function(data){
 		  			$scope.foodCompound = data;
 		  			
@@ -44,18 +54,7 @@ FirstApp.controller(
 				  	var pack = d3.layout.pack()
 				  	    .size([diameter - 4, diameter - 4])
 				  	    .value(function(d) { return d.size; });
-				  	
-				  	var tooltip = d3.select("bubble")
-					    .append("div")
-					    .style("position", "absolute")
-					    .style("z-index", "10")
-					    .style("visibility", "hidden")
-					    .style("color", "white")
-					    .style("padding", "10px")
-					    .style("background-color", "rgba(0, 0, 0, 0.75)")
-					    .style("border-radius", "6px")
-					    .style("font", "14px sans-serif")
-					    .text("tooltip");
+				  
 				  	
 				  	var svg = d3.select("#bubble").append("svg")
 				  	    .attr("width", diameter)
@@ -63,7 +62,17 @@ FirstApp.controller(
 				  	  .append("g")
 				  	    .attr("transform", "translate(2,2)");
 	
-	
+					var tooltip = d3.select("body")
+				    .append("div")
+				    .style("position", "absolute")
+				    .style("z-index", "10")
+				    .style("visibility", "hidden")
+				    .style("color", "white")
+				    .style("padding", "8px")
+				    .style("background-color", "rgba(0, 0, 0, 0.75)")
+				    .style("border-radius", "6px")
+				    .style("font", "14px sans-serif")
+				    .text("tooltip");
 				  	  var node = svg.datum(root).selectAll(".node")
 				  	      .data(pack.nodes)
 				  	    .enter().append("g")
@@ -78,6 +87,7 @@ FirstApp.controller(
 					      })
 					      .on("mouseout", function(){return tooltip.style("visibility", "hidden");})
 					      .on("click", function(d){
+					    	  tooltip.style("visibility", "hidden");
 					    	  var url = "http://localhost:9955/green-market/#/by_compound_name/"+d.name;
 					    	  $(location).attr('href', url);
 					    	  //window.location = url;

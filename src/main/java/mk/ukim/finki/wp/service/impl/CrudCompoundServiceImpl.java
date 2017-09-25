@@ -27,4 +27,10 @@ BaseEntityCrudServiceImpl<Compound, CompoundRepository> implements
 		return repository.findByName(name);
 	}
 
+	@Override
+	public List<Compound> findTop10ByNameWhereLike(String name) {
+		// TODO Auto-generated method stub
+		return repository.findTop10ByNameWhereLike(name);
+	}
+
 }

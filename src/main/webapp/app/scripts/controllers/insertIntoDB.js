@@ -38,7 +38,6 @@ FirstApp.controller('insertIntoDBController',
     	            {"resource": "http://dbpedia.org/resource/Injera" , "abstract": "Injera (Amharic\u0259n\u01E7\u00E4ra [\u0268nd\u0292\u0259ra]; sometimes transliterated as enjera; Oromo: bidenaa; Somali: canjeero) or taita (Tigrinya \u1323\u12ED\u1273)  is a sourdough-risen flatbread with a unique, slightly spongy texture. Traditionally made out of teff flour, it is a national dish in Ethiopia and Eritrea. A similar variant is eaten in Somalia and Djibouti (where it is called canjeero or lahooh), Yemen (where it is known as lahoh), and Sudan." , "ingredientName": "Teffflour (sometimeswheat,barley,cornorriceflour)" , "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/Alicha_1.jpg?width=300" , "name": "Injera" },
     	            {"resource": "http://dbpedia.org/resource/Chakhchoukha" , "abstract": "Chakhchoukha, chekhechoukha or chakhchoura (Arabic: \u0634\u062E\u0634\u0648\u062E\u0629\u200E) is a dish of Algerian cuisine, eaten often on festive celebrations, especially popular in the Aur\u00E8s region. The dish consists of tearing small pieces of Rougag (thin round flatbread) mixed with Marqa, a stew." , "ingredientName": "Semolinaflour" , "thumbnail": "http://commons.wikimedia.org/wiki/Special:FilePath/Chakhchoukha9.JPG?width=300" , "name": "Chakhchoukha" }];
     	var test = JSON.stringify(json);
-    	debugger;
     	 test = test.replace(/[^A-Za-z 0-9 \.,\?""!@#\$%\^&\*\(\)-_=\+;:<>\/\\\|\}\{\[\]`~]*/g, '');
     	 
     	 console.log(test);

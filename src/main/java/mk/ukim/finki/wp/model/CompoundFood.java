@@ -2,6 +2,7 @@ package mk.ukim.finki.wp.model;
 
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -11,6 +12,7 @@ import javax.persistence.Table;
 public class CompoundFood extends BaseEntity {
     
     @ManyToOne
+    @JoinColumn(name = "compound_id")
     private Compound compound;
     @ManyToOne
     private Food food;

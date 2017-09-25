@@ -9,10 +9,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "compounds")
 public class Compound extends BaseEntity {
-
+	
     @Column(name = "moldb_formula")
     private String formula;
-    @Column(name = "moldb_inchi")
+	@Column(name = "moldb_inchi")
     private String inchi;
     private String type;
     private String name;

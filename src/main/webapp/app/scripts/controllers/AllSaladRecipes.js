@@ -14,7 +14,9 @@ FirstApp
 						function($scope, crudService, $routeParams, toaster,
 								settings, ngTableParams, $filter, $modal, $http) {
 	$scope.totalData = 20;
+	window.scrollTo(0,0);
 	
+	window.scope = $scope;
 	var service = crudService('salad_recipes');
 	  
 	  service.query(function(data){

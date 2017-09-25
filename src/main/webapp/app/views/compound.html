@@ -20,91 +20,32 @@
 	}
 
 </style>
-<div class="container-fluid" >
+<div class="container-fluid" autoscroll="true">
 	<div class="col-md-12">
 
 		<div class="row">
 			<div class="panel panel-primary">
 				<div class="panel panel-heading">
-					<h4 class="text-center">{{compound.name}}</h4>
+					<h4 class="text-center">All Foods Containing the compound {{name}}</h4>
 				</div>
 				<div class="panel panel-body">
 					<div class="col-md-12">
-
-						<div class="row">
-							<div class="col-md-3">
-								<h5>
-									<b>Compound formula</b>
-								</h5>
-							</div>
-							<div class="col-md-9">
-								<div ng-if="compound.formula">
-									<h5>{{compound.formula}}</h5>
-								</div>
-								<div ng-if="!compound.formula">
-									There is no compound formula ! 
-								</div>
-							</div>
-						</div>
-						<hr>
-
-						<div class="row">
-							<div class="col-md-3">
-								<h5>
-									<b>Compound Isomeric SMILES	</b>
-								</h5>
-							</div>
-							<div class="col-md-9">
-								<div ng-if="compound.smiles">
-									<h5>{{compound.smiles}}</h5>
-								</div>
-								<div ng-if="!compound.smiles">
-									There is no compound Isomeric SMILES !
-								</div>
-							</div>
-						</div>
-						<hr>
+						<table ng-table="tableParams" show-filter="true"
+							class="table">
 						
-						<div class="row">
-							<div class="col-md-3">
-								<h5>
-									<b>Compound InChI Identifier</b>
-								</h5>
-							</div>
-							<div class="col-md-9">
-								<div ng-if="compound.inchi">
-									<h5>{{compound.inchi}}</h5>
-								</div>
-								<div ng-if="!compound.inchi">
-									There is no compound Inchi
-								</div>
-							</div>
-						</div>
-						<hr>
-						
-						<!-- <div class="row">
-							<div class="panel panel-info">
-								<div class="panel panel-heading">
-									
-								</div>
-								<div class="panel panel-body">
-									<div class="col-md-12">
-										<div ng-if="compoundHealthEffect[0]">
-											<div ng-repeat="entity in compoundHealthEffect">
-												<button class="btn btn-default">{{entity.healthEffectName}}</button>
-											</div>
-										</div>
-										<div ng-if="!compoundHealthEffect[0]">
-											There are no compound health effects !
-										</div>
-									</div>
-								</div>
-							</div>
-						</div> -->
-						<h4 class="text-center">Compound health effects</h4>
-						<div id="compoundHealthEffects">
-						
-						</div>
+							<tr ng-repeat="e in data">
+								<td  data-title="'Food name'" sortable="'name'"
+									filter="{ 'name': 'text' }"><a ng-href="#/by_food_name/{{e.name}}">{{ e.name }}</a></td>
+								<td data-title="' Group '" sortable="'group'"
+									filter="{ 'group': 'text' }"><a ng-href="#/by_food_group/{{e.group}}">{{ e.group }}</a></td>
+								<td data-title="'Subgroup'" sortable="'subgroup'"
+									filter="{ 'subgroup': 'text' }"><a ng-href="#/by_food_subgroup/{{e.subgroup}}">{{ e.subgroup }}</a></td>
+								<td data-title="'Scientific Name'" sortable="'scientific'"
+									filter="{ 'scientific': 'text' }">{{ e.scientific }}</td>
+							</tr>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

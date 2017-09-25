@@ -101,7 +101,7 @@ body {
 	position: relative;
 	padding-top: 0px;
 	padding-left: 0px;
-	margin-top: -60px;
+	margin-top: -35px;
 	margin-left: -16px;
 	text-decoration: none;
 	font-size: 20px;
@@ -121,23 +121,7 @@ body {
 
 <div id="mySidenav" class="sidenav">
 	<a class="nav" href="#">Home</a>
-	<accordion class="accordion" close-others="true"> 
-		<accordion-group is-open="status[$index].open"> 
-			<accordion-heading ng-class="{padding: 0 }" ng-click="status[$index].open=!status[$index].open">
-				<div>
-					<a id="food" class="col-md-9"
-						ng-click="navBrowseFoods(); $event.stopPropagation();"> Foods 
-					</a> 
-					<i
-						class="glyphicon col-md-3"
-						ng-class="{'glyphicon-collapse-up': status[$index].open, 'glyphicon-collapse-down': !status[$index].open}">
-					</i>
-				</div>
-			</accordion-heading> 
-				<a id="a" href="#/allNutrients">Nutrients</a> 
-				<a id="a" href="#/allCompounds">Compounds</a> 
-		</accordion-group>
-	</accordion>
+	<a  href="#/allFoods">Foods</a>
 	<accordion class="accordion" close-others="true"> 
 		<accordion-group is-open="status[$index].open"> 
 			<accordion-heading ng-class="{padding: 0 }" ng-click="status[$index].open=!status[$index].open">

@@ -3,6 +3,7 @@ package mk.ukim.finki.wp.web.resources;
 import java.util.List;
 
 import mk.ukim.finki.wp.model.AllRecipes;
+import mk.ukim.finki.wp.model.Compound;
 import mk.ukim.finki.wp.model.CompoundFood;
 import mk.ukim.finki.wp.service.CrudAllRecipesService;
 import mk.ukim.finki.wp.web.CrudResource;
@@ -33,6 +34,11 @@ public class AllRecipesResource extends CrudResource<AllRecipes,CrudAllRecipesSe
 	@RequestMapping(value = "/by_recipe_ingredient_name/{name}", method = RequestMethod.GET, produces = "application/json")
 	public List<AllRecipes> getRecipeByIngredientName(@PathVariable String name) {
 		return getService().findRecipeByIngredientName(name);
+	}
+	
+	@RequestMapping(value = "/search_by_recipe_name/{name}", method = RequestMethod.GET, produces = "application/json")
+	public List<AllRecipes> getTop10ByFoodNameLike(@PathVariable String name) {
+		return getService().findTop10ByNameWhereLike(name);
 	}
 	
 }

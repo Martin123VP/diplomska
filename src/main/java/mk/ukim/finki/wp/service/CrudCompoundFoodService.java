@@ -7,4 +7,6 @@ import mk.ukim.finki.wp.model.CompoundFood;
 
 public interface CrudCompoundFoodService extends BaseEntityCrudService<CompoundFood> {
 	public List<CompoundFood> findByFoodName(String name);
+	
+	public List<CompoundFood> findDistinctByCompoundName(String name);
 }

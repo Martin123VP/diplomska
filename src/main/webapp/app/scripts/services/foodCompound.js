@@ -5,6 +5,12 @@ FirstApp.factory('FoodCompoundService',['$resource', 'settings', function($resou
 		      method: 'GET',
 		      url: "/data/rest/compounds_foods/by_food_name/:name",
 		      isArray: true
-		    }
+		},
+		findFoodByCompoundName: {
+			  method: 'GET',
+		      url: "/data/rest/compounds_foods/by_compound_name/:name",
+		      isArray: true
+		}
+		    
 	});
 }]);

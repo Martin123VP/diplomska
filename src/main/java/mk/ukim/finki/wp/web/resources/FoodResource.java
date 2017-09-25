@@ -44,4 +44,9 @@ public class FoodResource extends CrudResource<Food, CrudFoodService> {
 	public List<Food> getByFoodSubgroup(@PathVariable String name) {
 		return getService().findBySubgroup(name);
 	}
+	
+	@RequestMapping(value = "/search_by_food_name/{name}", method = RequestMethod.GET, produces = "application/json")
+	public List<Food> getTop10ByFoodNameLike(@PathVariable String name) {
+		return getService().findTop10ByNameWhereLike(name);
+	}
 }

@@ -15,11 +15,10 @@ FirstApp
 								settings, ngTableParams, $filter, $modal, $http) {
 	
 								var foodService = crudService('foods');
-								window.scope = $scope;
+								
 								var data = foodService.query(function(){
 									tableParamsLoad();
 								}); 
-								
 								
 								var tableParamsLoad = function(){
 									$scope.tableParams = new ngTableParams(

@@ -17,4 +17,6 @@ public interface FoodRepository extends JpaSpecificationRepository<Food> {
     public List<Food> findByGroup(String name);
     
     public List<Food> findBySubgroup(String name);
+    @Query(value = "SELECT * FROM foods f WHERE f.name LIKE CONCAT('%',:name,'%') Limit 10", nativeQuery = true)
+    public List<Food> findTop10ByNameWhereLike(@Param("name") String name);
 }

@@ -42,4 +42,9 @@ BaseEntityCrudServiceImpl<Food, FoodRepository> implements
 		return repository.findByNameWhereLike(name);
 	}
 
+	@Override
+	public List<Food> findTop10ByNameWhereLike(String name) {
+		return repository.findTop10ByNameWhereLike(name);
+	}
+
 }

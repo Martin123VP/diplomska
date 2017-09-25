@@ -27,4 +27,10 @@ BaseEntityCrudServiceImpl<CompoundFood, CompoundFoodRepository> implements
 		return repository.findByFoodName(name);
 	}
 
+	@Override
+	public List<CompoundFood> findDistinctByCompoundName(String name) {
+		// TODO Auto-generated method stub
+		return repository.findDistinctByCompoundName(name);
+	}
+
 }

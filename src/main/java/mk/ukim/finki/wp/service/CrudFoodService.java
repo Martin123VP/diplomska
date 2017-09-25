@@ -13,4 +13,6 @@ public interface CrudFoodService extends BaseEntityCrudService<Food> {
 	public List<Food> findBySubgroup(String name);
 	
 	public List<Food> findByNameWhereLike(String name);
+	
+	public List<Food> findTop10ByNameWhereLike(String name);
 }

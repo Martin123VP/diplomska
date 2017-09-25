@@ -22,6 +22,11 @@ FirstApp.factory('FoodService', ['$resource', 'settings', function($resource, se
     findByFoodNameLike: {
     	method: 'GET',
     	url: "/data/rest/foods/by_food_name_like/:name"
+    },
+    searchByFoodNameLike: {
+    	method: 'GET',
+    	url: 'data/rest/foods/search_by_food_name/:name',
+    	isArray: true
     }
     
   });

@@ -1,24 +1,30 @@
 <nav role="navigation" class="navbar navbar-default  navbar-fixed-top">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="#">Green Market</a>
+			<a class="navbar-brand" href="#">Food Market</a>
 		</div>
 		<div id="navbar" class="navbar-collapse collapse" ng-controller="HeaderController">
 
 			<ul class="nav nav-pills pull-right">
-				<!-- Search form -->
-				<form class="navbar-form navbar-left" role="search"
-					ng-submit="search()" ng-controller="SearchController">
+				<div class="navbar-form navbar-left">
 					<div class="form-group">
 						<input type="text" class="form-control" placeholder="Search"
-							ng-model="searchField">
+							ng-model="searchField" ng-change="getResult(searchField, selectedValue)">
+						<div class="dropdown-content">
+						  <ul style="list-style: none;" ng-repeat="res in resList">
+						    <li style="margin: 5px;"><a href="#/{{href}}/{{res.name}}">{{res.name}}</a></li>
+						  </ul>
+						</div>
 					</div>
-					<button type="submit" class="btn btn-default">Submit</button>
-				</form>
+					<select class="form-control" ng-model="selectedValue" ng-init="selectedValue = 'food'" ng-change="getResult(searchField, selectedValue)">
+						<option value="food">Food</option>
+						<option value="foodRecipe">Food Recipe</option>
+					</select>
+				</div>
+			</ul>
 
 
-
-				
+				<!--
 				<li><a ng-href="#/login" ng-if="!$root.user">Login</a></li>
 					
 				<li class="dropdown" ng-if="$root.user">
@@ -56,5 +62,16 @@
 		</div>
 		<!--/.nav-collapse -->
 	</div>
-
 </nav>
+<style>
+		.dropdown-content {
+	    display: block;
+	    position: absolute;
+	    background-color: #f9f9f9;
+	    min-width: 200px;
+	    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	    z-index: 1;
+	    
+	    
+}
+	</style>
